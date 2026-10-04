@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#000000" />
+<title>For Nanditha.</title>
+<style>
+:root{--blue:#0071e3;--blue2:#06c;--black:#000;--white:#f5f5f7;--ink:#1d1d1f;--muted:#86868b;--ease:cubic-bezier(.22,.61,.36,1)}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000;color:#f5f5f7;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}body{cursor:none}button{font:inherit}
+#app{width:100%;height:100%;position:relative;background:#000;overflow:hidden}.scene{position:absolute;inset:0;display:grid;place-items:center;padding:9vh 8vw;opacity:0;visibility:hidden;transform:scale(1.055);filter:blur(12px);transition:opacity .9s var(--ease),transform 1.15s var(--ease),filter .9s var(--ease),visibility 0s linear 1s}.scene.active{opacity:1;visibility:visible;transform:scale(1);filter:blur(0);transition-delay:0s;z-index:2}.scene.exit{opacity:0;transform:scale(.96);filter:blur(14px);visibility:visible;z-index:1}.scene.light{background:var(--white);color:var(--ink)}.scene.blue{background:var(--blue);color:white}.scene.black{background:#000;color:var(--white)}
+.content{width:min(1180px,100%);height:100%;display:flex;flex-direction:column;justify-content:center}.eyebrow{font-size:14px;line-height:1.2;letter-spacing:.01em;color:var(--muted);margin-bottom:24px}.light .eyebrow{color:#6e6e73}.blue .eyebrow{color:rgba(255,255,255,.75)}h1,h2,p{margin:0}h1{font-size:clamp(58px,9vw,150px);line-height:.91;letter-spacing:-.065em;font-weight:700;max-width:1100px}h2{font-size:clamp(42px,6vw,86px);line-height:.98;letter-spacing:-.055em;font-weight:700;max-width:1000px}.sub{font-size:clamp(21px,2.1vw,31px);line-height:1.18;letter-spacing:-.025em;max-width:720px;color:#a1a1a6;margin-top:32px}.light .sub{color:#6e6e73}.blue .sub{color:rgba(255,255,255,.82)}
+.nav{position:fixed;z-index:20;top:0;left:0;right:0;height:52px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;color:rgba(255,255,255,.9);font-size:14px;letter-spacing:-.01em;pointer-events:none}.nav .brand{font-weight:600}.nav .counter{font-variant-numeric:tabular-nums;color:rgba(255,255,255,.55)}.light~.nav,.light + .nav{color:#1d1d1f}.nav:after{content:"";position:absolute;left:28px;right:28px;bottom:0;height:1px;background:currentColor;opacity:.12}
+.controls{position:fixed;z-index:20;right:28px;bottom:26px;display:flex;gap:8px}.ctrl{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.25);color:inherit;cursor:none;display:grid;place-items:center;backdrop-filter:blur(12px)}.light .ctrl{border-color:rgba(0,0,0,.14);background:rgba(255,255,255,.55);color:#1d1d1f}.ctrl:hover{background:rgba(255,255,255,.14)}
+.progress{position:fixed;z-index:21;left:28px;bottom:34px;width:180px;height:2px;background:rgba(255,255,255,.16)}.progress i{display:block;height:100%;width:0;background:currentColor;transition:width .7s var(--ease)}.light~.progress{background:rgba(0,0,0,.12)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .9s var(--ease)}.active .reveal{opacity:1;transform:none}.active .d1{transition-delay:.15s}.active .d2{transition-delay:.28s}.active .d3{transition-delay:.41s}.active .d4{transition-delay:.54s}
+.fake-hope{font-size:clamp(16px,1.5vw,22px);margin-top:28px;color:#86868b}.fake-hope b{color:var(--blue)}
+.file{margin-top:44px;width:min(760px,100%);border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:26px;background:#0c0c0d;box-shadow:0 25px 80px rgba(0,0,0,.45)}.light .file{background:#fff;border-color:rgba(0,0,0,.1);box-shadow:0 25px 80px rgba(0,0,0,.08)}.filetop{display:flex;justify-content:space-between;font-size:13px;color:#86868b;margin-bottom:22px}.filebody{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;line-height:1.7}.bad{color:#ff453a}.good{color:#30d158}
+.choice{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}.pill{border:0;border-radius:999px;background:#fff;color:#000;padding:14px 22px;font-size:16px;cursor:none;transition:transform .25s,background .25s}.pill:hover{transform:scale(1.03);background:#e9e9ed}.pill.secondary{background:transparent;color:inherit;border:1px solid currentColor;opacity:.75}.light .pill{background:#1d1d1f;color:#fff}.light .pill.secondary{background:transparent;color:#1d1d1f}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:center}.big-number{font-size:clamp(100px,18vw,280px);line-height:.75;letter-spacing:-.09em;font-weight:700}.quote{font-size:clamp(28px,4vw,60px);line-height:1.02;letter-spacing:-.05em}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}.photo{aspect-ratio:4/5;border-radius:20px;background:#161617;overflow:hidden;position:relative}.photo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9)}.photo span{position:absolute;left:14px;bottom:12px;font-size:12px;color:#fff;background:rgba(0,0,0,.45);padding:6px 9px;border-radius:99px;backdrop-filter:blur(8px)}
+.call{display:inline-flex;align-items:center;gap:14px;margin-top:40px;text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:15px 20px 15px 17px;width:max-content}.call .dot{width:34px;height:34px;border-radius:50%;background:currentColor;position:relative}.call .dot:after{content:"";position:absolute;inset:10px;border-radius:50%;background:#000}.light .call .dot:after{background:var(--white)}
+.footerline{position:absolute;bottom:12%;left:8vw;font-size:13px;color:#86868b}.secret{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}.toast{position:fixed;z-index:100;left:50%;bottom:70px;transform:translate(-50%,20px);opacity:0;background:#1d1d1f;color:#fff;border-radius:999px;padding:10px 15px;font-size:13px;transition:.35s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+#cookie{position:fixed;z-index:200;width:28px;height:28px;pointer-events:none;transform:translate(-50%,-50%);transition:transform .08s linear;filter:drop-shadow(0 3px 5px rgba(0,0,0,.28))}.cookie-dot{fill:#3b2118}.cookie-base{fill:#d99b59;stroke:#8a5b31;stroke-width:1.5}.bite{fill:#000}
+@media(max-width:700px){body{cursor:auto}.nav{padding:0 18px}.nav:after{left:18px;right:18px}.progress{left:18px;width:120px}.controls{right:18px}.scene{padding:9vh 7vw}.split{grid-template-columns:1fr;gap:34px}.photos{grid-template-columns:1fr 1fr}.photos .photo:last-child{display:none}h1{font-size:clamp(54px,15vw,90px)}.sub{font-size:22px}.file{padding:18px;border-radius:20px}.choice{margin-top:26px}}
+@media(prefers-reduced-motion:reduce){.scene,.reveal{transition:none!important}.scene{transform:none!important;filter:none!important}.reveal{opacity:1;transform:none}.ctrl,.pill{transition:none}}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="nav"><div class="brand">Nanditha.</div><div class="counter" id="counter">01 / 10</div></div>
+
+  <section class="scene black active" data-name="the confidence" aria-label="Opening">
+    <div class="content">
+      <div class="eyebrow reveal d1">A MESSAGE FROM AMEER</div>
+      <h1 class="reveal d2">Don't worry.<br><span style="color:#fff">I got this.</span></h1>
+      <p class="sub reveal d3">You sent me the assignment. I said, <b style="color:#fff">“send it, I'll see.”</b></p>
+      <p class="fake-hope reveal d4">This website begins before the disaster.</p>
+    </div>
+  </section>
+
+  <section class="scene light" data-name="the promise">
+    <div class="content">
+      <div class="eyebrow reveal d1">02 · EXPECTATIONS</div>
+      <h2 class="reveal d2">I genuinely thought<br>I could finish it.</h2>
+      <p class="sub reveal d3">Privacy lawyer. LL.M. graduate. Reasonably functioning human being. How hard could one assignment be?</p>
+      <div class="choice reveal d4"><button class="pill" onclick="next()">continue →</button></div>
+    </div>
+  </section>
+
+  <section class="scene black" data-name="the file">
+    <div class="content">
+      <div class="eyebrow reveal d1">03 · ATTACHMENT RECEIVED</div>
+      <h2 class="reveal d2">Then I opened it.</h2>
+      <div class="file reveal d3">
+        <div class="filetop"><span>Lab_LP_week4.ipynb</span><span>received</span></div>
+        <div class="filebody"><span>Linear Programming</span><br><span>Simplex Method</span><br><span>JuMP</span><br><span>GLPK</span><br><br><span class="bad">x₁, x₂, constraints, objective functions...</span><br><br><span>...</span></div>
+      </div>
+      <p class="fake-hope reveal d4">This is not privacy law.</p>
+    </div>
+  </section>
+
+  <section class="scene light" data-name="the decline">
+    <div class="content">
+      <div class="eyebrow reveal d1">04 · CONFIDENCE UPDATE</div>
+      <div class="split">
+        <div class="big-number reveal d2" id="confidence">100%</div>
+        <div><p class="quote reveal d3">“I'll figure it out.”</p><p class="sub reveal d4">A sentence that aged incredibly fucking badly.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene black" data-name="the actual problem">
+    <div class="content">
+      <div class="eyebrow reveal d1">05 · SIMPLEX</div>
+      <h2 class="reveal d2">I studied law for this.</h2>
+      <div class="file reveal d3"><div class="filebody">maximize Z = x₁ + 3x₂<br>subject to<br>x₁ + x₂ ≤ 6<br>−x₁ + 2x₂ ≤ 8<br>x₁, x₂ ≥ 0</div></div>
+      <p class="sub reveal d4">Who the fuck are x₁ and x₂?</p>
+    </div>
+  </section>
+
+  <section class="scene blue" data-name="the surrender">
+    <div class="content">
+      <div class="eyebrow reveal d1">06 · STATUS</div>
+      <h1 class="reveal d2">I tried.</h1>
+      <p class="sub reveal d3">I actually tried. And somewhere between Simplex, chairs, house prices, apples and pears, I accepted that this was no longer a productive use of either of our time.</p>
+      <p class="fake-hope reveal d4" style="color:rgba(255,255,255,.72)">So I did the only sensible thing.</p>
+    </div>
+  </section>
+
+  <section class="scene light" data-name="the pivot">
+    <div class="content">
+      <div class="eyebrow reveal d1">07 · PIVOT</div>
+      <h1 class="reveal d2">I made this<br>instead.</h1>
+      <p class="sub reveal d3">You said you have an assignment due and i said, I'll Try. Instead. I gave you a completely unnecessary website. Seems fair.</p>
+      <p class="fake-hope reveal d4">Now it gets personal.</p>
+    </div>
+  </section>
+
+  <section class="scene black" data-name="the real part">
+    <div class="content">
+      <div class="eyebrow reveal d1">08 · FOR NANDITHA</div>
+      <h2 class="reveal d2">We don't have to talk every day.</h2>
+      <p class="sub reveal d3">You don't owe me updates. You don't need an explanation for disappearing. You don't need to wonder whether you're bothering me.</p>
+      <p class="sub reveal d4" style="color:#fff">If life gets fucked, call me. If life is good, call me. If you have absolutely nothing to say, call me anyway.</p>
+    </div>
+  </section>
+
+  <section class="scene light" data-name="the evidence">
+    <div class="content">
+      <div class="eyebrow reveal d1">09 · EVIDENCE</div>
+      <h2 class="reveal d2">A few things worth keeping.</h2>
+      <div class="photos reveal d3">
+        <div class="photo"><img src="assets/photos/nanditha-01.jpg" alt="Add a photo of Nanditha" onerror="this.style.display='none'"><span>exhibit A</span></div>
+        <div class="photo"><img src="assets/photos/ameer-nanditha-01.jpg" alt="Add a photo of Ameer and Nanditha" onerror="this.style.display='none'"><span>exhibit B</span></div>
+        <div class="photo"><img src="assets/photos/nanditha-02.jpg" alt="Add another photo" onerror="this.style.display='none'"><span>exhibit C</span></div>
+      </div>
+      <p class="fake-hope reveal d4">Replace these with the real evidence. No AI bullshit.</p>
+    </div>
+  </section>
+
+  <section class="scene black" data-name="the call">
+    <div class="content">
+      <div class="eyebrow reveal d1">10 · ONE CALL AWAY</div>
+      <h1 class="reveal d2">Just call.</h1>
+      <p class="sub reveal d3">No apology. No “sorry to disturb you.” No five-paragraph context. If you need me, I'm here.</p>
+      <a id="callBtn" class="call reveal d4" href="tel:+917904060888"><span class="dot"></span><span>Call Ameer</span></a>
+      <p class="fake-hope reveal d4"> <b style="color:#fff"></b> at </p>
+    </div>
+  </section>
+
+  <div class="secret" id="secret">fuck</div>
+</div>
+<div class="progress"><i id="bar"></i></div>
+<div class="controls"><button class="ctrl" onclick="prev()" aria-label="Previous">←</button><button class="ctrl" onclick="next()" aria-label="Next">→</button></div>
+<div class="toast" id="toast"></div>
+<div id="cookie" aria-hidden="true"><svg viewBox="0 0 32 32" width="28" height="28"><path class="cookie-base" d="M27.2 15.7c1.7-1.3 1.8-3.9.1-5.2-1.2-1-2.7-1.1-4-.5-.3-3.5-3.2-6.2-6.8-6.2-3.3 0-6.1 2.3-6.7 5.4C6.5 8.5 3.5 10.9 3.5 14.6c0 4.3 3.5 7.8 7.8 7.8 1.1 3.2 4.1 5.4 7.6 5.4 4.5 0 8.2-3.6 8.2-8.1 0-1.4-.4-2.8-1.1-4z"/><circle class="cookie-dot" cx="11" cy="14" r="1.7"/><circle class="cookie-dot" cx="18" cy="10" r="1.5"/><circle class="cookie-dot" cx="20" cy="18" r="1.8"/><circle class="cookie-dot" cx="13" cy="21" r="1.4"/><circle class="cookie-dot" cx="23" cy="23" r="1.2"/></svg></div>
+<script>
+const CONFIG={name:'Nanditha',phone:'+917904060888'};
+const scenes=[...document.querySelectorAll('.scene')];let idx=0,busy=false;const counter=document.getElementById('counter'),bar=document.getElementById('bar'),toast=document.getElementById('toast');
+function render(dir=1){scenes.forEach((s,i)=>{s.classList.toggle('active',i===idx);s.classList.remove('exit')});counter.textContent=String(idx+1).padStart(2,'0')+' / '+String(scenes.length).padStart(2,'0');bar.style.width=((idx)/(scenes.length-1)*100)+'%';document.title=idx===0?'For Nanditha.':`${String(idx+1).padStart(2,'0')} · Nanditha.`;}
+function go(n){if(busy)return;n=Math.max(0,Math.min(scenes.length-1,n));if(n===idx)return;busy=true;scenes[idx].classList.add('exit');idx=n;render();setTimeout(()=>busy=false,850)}function next(){go(idx+1)}function prev(){go(idx-1)}
+window.addEventListener('keydown',e=>{if(['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();next()}if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();prev()}if(e.key.toLowerCase()==='n'){toastMsg('Nanditha detected.');}if(e.key.toLowerCase()==='f'){toastMsg('language filter: bypassed.');}});
+let wheelLock=false;window.addEventListener('wheel',e=>{if(wheelLock)return;wheelLock=true;e.deltaY>0?next():prev();setTimeout(()=>wheelLock=false,900)},{passive:true});
+function toastMsg(t){toast.textContent=t;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1600)}
+document.getElementById('callBtn').href='tel:'+CONFIG.phone;
+let cx=innerWidth/2,cy=innerHeight/2,tx=cx,ty=cy;const cookie=document.getElementById('cookie');if(matchMedia('(pointer:fine)').matches){window.addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY});function tick(){cx+=(tx-cx)*.22;cy+=(ty-cy)*.22;cookie.style.left=cx+'px';cookie.style.top=cy+'px';requestAnimationFrame(tick)}tick();document.querySelectorAll('button,a').forEach(el=>{el.addEventListener('mouseenter',()=>cookie.style.transform='translate(-50%,-50%) scale(1.18) rotate(-8deg)');el.addEventListener('mouseleave',()=>cookie.style.transform='translate(-50%,-50%) scale(1) rotate(0)')})}else cookie.style.display='none';
+let clicks=0;document.addEventListener('click',()=>{clicks++;if(clicks===10)toastMsg('you clicked enough. get a hobby.')});
+render();
+</script>
+</body>
+</html>
